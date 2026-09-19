@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DevStart</title>
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div
+        id="loginScreen"
+        class="login-screen"
+    >
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                <span>DEV</span>START
+            </div>
+
+            <h1>
+                Bem-vindo ao DevStart
+            </h1>
+
+            <p>
+                Entre na sua conta para continuar aprendendo.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+            <p class="login-info">
+
+                Ainda não tem uma conta?
+
+                <a
+                    href="#"
+                    id="createAccount"
+                >
+                    Criar conta
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- APLICAÇÃO -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>DEV</span>START
+        </div>
+
+
+        <nav class="menu">
+
+            <button
+                class="menu-item active"
+                data-page="inicio"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="cursos"
+            >
+                <i class="fa-solid fa-book"></i>
+                <span>Cursos</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="ia"
+            >
+                <i class="fa-solid fa-robot"></i>
+                <span>Tutor IA</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="editor"
+            >
+                <i class="fa-solid fa-code"></i>
+                <span>Editor</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-page="configuracoes"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="user-info">
+
+                <strong id="sidebarName">
+                    Aluno
+                </strong>
+
+                <span id="sidebarEmail">
+                    DevStart
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main" id="app"></main>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

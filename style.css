@@ -1,0 +1,1887 @@
+/* =========================================================
+   DEVSTART
+   INDEX.CSS COMPLETO
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f6f8;
+    color: #111827;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bfc3c9;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999fa7;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 87, 34, 0.18),
+            transparent 35%
+        ),
+        #111317;
+}
+
+.login-box {
+    width: 430px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 27px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    color: #111827;
+}
+
+.login-logo span {
+    color: #ff5722;
+}
+
+.login-box h1 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+
+    color: #111827;
+}
+
+.login-box > p {
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-top: 20px;
+
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d9dde3;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #ff5722;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.login-button {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #ff5722;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background: #f4511e;
+
+    transform: translateY(-1px);
+}
+
+.login-info {
+    margin-top: 20px;
+}
+
+.login-info a {
+    color: #ff5722;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 218px;
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 15px 18px;
+
+    background: #111317;
+
+    color: #ffffff;
+
+    border-right: 1px solid #25282d;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    padding: 0 13px 30px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #ff5722;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 14px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #c8ccd2;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.menu-item i {
+    width: 20px;
+
+    color: #aeb5bf;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    background: #1c1f24;
+
+    color: #ffffff;
+}
+
+.menu-item:hover i {
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background: #ff5722;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(255, 87, 34, 0.22);
+}
+
+.menu-item.active i {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   USUÁRIO DA SIDEBAR
+========================================================= */
+
+.sidebar-user {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 17px 9px 3px;
+
+    border-top: 1px solid #292c31;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #24282e;
+
+    border-radius: 50%;
+
+    color: #ff7043;
+}
+
+.user-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.user-info strong {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.user-info span {
+    color: #8c929b;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+========================================================= */
+
+.main {
+    width: calc(100% - 218px);
+
+    min-height: 100vh;
+
+    margin-left: 218px;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 87, 34, 0.045),
+            transparent 30%
+        ),
+        #f5f6f8;
+}
+
+
+/* =========================================================
+   TOPO
+========================================================= */
+
+.topbar {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.greeting small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.greeting h1 {
+    color: #111827;
+
+    font-size: 29px;
+
+    line-height: 1.2;
+}
+
+.greeting p {
+    margin-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.xp {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 10px;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.xp i {
+    color: #ff5722;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.section {
+    width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+.section-title h2 {
+    color: #111827;
+
+    font-size: 22px;
+}
+
+.section-title p {
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PROGRESSO GERAL
+========================================================= */
+
+.progress-area {
+    width: 100%;
+
+    margin-bottom: 27px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #e7e9ec;
+
+    border-radius: 20px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: #ff5722;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   GRID DOS CURSOS
+========================================================= */
+
+.learning-grid,
+.courses-grid,
+.course-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CARDS DOS CURSOS
+========================================================= */
+
+.course-card,
+.learning-card {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e3e7;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 7px 23px rgba(0, 0, 0, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.course-card:hover,
+.learning-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d2d6dc;
+
+    box-shadow:
+        0 13px 30px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   ÍCONE DO CURSO
+========================================================= */
+
+.course-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 13px;
+
+    background: #fff0ea;
+
+    border-radius: 11px;
+
+    color: #ff5722;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   TÍTULO DO CURSO
+========================================================= */
+
+.course-card h3,
+.learning-card h3 {
+    margin-bottom: 7px;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TEXTO DO CURSO
+========================================================= */
+
+.course-card p,
+.learning-card p {
+    margin-bottom: 16px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROGRESSO DO CARD
+========================================================= */
+
+.course-card .progress,
+.learning-card .progress {
+    margin-top: auto;
+
+    color: #111827;
+
+    font-size: 13px;
+}
+
+.course-card .progress-bar,
+.learning-card .progress-bar {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+button {
+    font-family: inherit;
+}
+
+.primary-button,
+.course-button,
+.start-button,
+.next-button {
+    width: fit-content;
+
+    padding: 10px 17px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff5722;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary-button:hover,
+.course-button:hover,
+.start-button:hover,
+.next-button:hover {
+    background: #f4511e;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(255, 87, 34, 0.2);
+}
+
+.secondary-button,
+.back-button {
+    padding: 10px 16px;
+
+    border: 1px solid #d9dde3;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.secondary-button:hover,
+.back-button:hover {
+    border-color: #ff5722;
+
+    color: #ff5722;
+}
+
+
+/* =========================================================
+   DICA
+========================================================= */
+
+.tip-card {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 17px 19px;
+
+    background: #fff8f5;
+
+    border: 1px solid #ffe0d5;
+
+    border-radius: 15px;
+}
+
+.tip-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffeadf;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.tip-card h3 {
+    margin-bottom: 4px;
+
+    color: #111827;
+
+    font-size: 16px;
+}
+
+.tip-card p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PÁGINA DE CURSO
+========================================================= */
+
+.course-overview {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+.course-overview-header {
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 25px;
+}
+
+.course-overview-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0ea;
+
+    border-radius: 14px;
+
+    color: #ff5722;
+
+    font-size: 24px;
+}
+
+.course-overview-header h1 {
+    color: #111827;
+
+    font-size: 28px;
+}
+
+.course-overview-header p {
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LISTA DE AULAS
+========================================================= */
+
+.lesson-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.lesson-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 19px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 14px;
+
+    transition: 0.2s;
+}
+
+.lesson-item:hover {
+    border-color: #ffb39d;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.lesson-number {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0f2f4;
+
+    border-radius: 10px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.lesson-item.completed .lesson-number {
+    background: #ff5722;
+
+    color: #ffffff;
+}
+
+.lesson-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.lesson-info strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #111827;
+
+    font-size: 15px;
+}
+
+.lesson-info span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.lesson-status {
+    color: #20a464;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   AULA
+========================================================= */
+
+.lesson-page {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.lesson-header {
+    margin-bottom: 25px;
+}
+
+.lesson-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.lesson-course {
+    color: #ff5722;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.lesson-counter {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.lesson-header h1 {
+    margin-bottom: 8px;
+
+    color: #111827;
+
+    font-size: 31px;
+
+    line-height: 1.2;
+}
+
+.lesson-header p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTEÚDO DA AULA
+========================================================= */
+
+.lesson-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.lesson-card {
+    width: 100%;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.025);
+}
+
+.lesson-card h2 {
+    margin-bottom: 12px;
+
+    color: #111827;
+
+    font-size: 20px;
+}
+
+.lesson-card p {
+    margin-bottom: 11px;
+
+    color: #4b5563;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.lesson-card ul {
+    margin-left: 20px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CÓDIGO
+========================================================= */
+
+.code-example {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 15px;
+
+    padding: 19px;
+
+    background: #151719;
+
+    border-radius: 12px;
+
+    color: #f5f5f5;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+.code-example code {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   EXERCÍCIO
+========================================================= */
+
+.exercise-card {
+    width: 100%;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f5,
+            #ffffff
+        );
+
+    border: 1px solid #ffd9cc;
+
+    border-radius: 17px;
+}
+
+.exercise-label {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    padding: 6px 10px;
+
+    background: #ffeadf;
+
+    border-radius: 7px;
+
+    color: #ff5722;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.exercise-card h2 {
+    margin-bottom: 18px;
+
+    color: #111827;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   OPÇÕES DO EXERCÍCIO
+========================================================= */
+
+.exercise-options {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.exercise-option {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.exercise-option:hover {
+    border-color: #ff5722;
+
+    background: #fff8f5;
+}
+
+.exercise-option.correct {
+    border-color: #20a464;
+
+    background: #ecfdf3;
+
+    color: #157347;
+}
+
+.exercise-option.wrong {
+    border-color: #e5484d;
+
+    background: #fff0f0;
+
+    color: #b42318;
+}
+
+.exercise-feedback {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.exercise-feedback.show {
+    display: block;
+}
+
+.exercise-feedback.success {
+    background: #ecfdf3;
+
+    color: #157347;
+}
+
+.exercise-feedback.error {
+    background: #fff0f0;
+
+    color: #b42318;
+}
+
+
+/* =========================================================
+   AÇÕES DA AULA
+========================================================= */
+
+.lesson-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 23px;
+}
+
+
+/* =========================================================
+   TUTOR IA
+========================================================= */
+
+.ai-chat {
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: calc(100vh - 100px);
+
+    min-height: 500px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   CABEÇALHO IA
+========================================================= */
+
+.ai-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5722,
+            #ff7043
+        );
+
+    color: #ffffff;
+}
+
+.ai-header-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.ai-header-info h2 {
+    font-size: 18px;
+}
+
+.ai-header-info p {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   MENSAGENS IA
+========================================================= */
+
+.chat-messages {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 22px;
+
+    overflow-y: auto;
+
+    background: #f7f8fa;
+}
+
+.ai-message {
+    width: fit-content;
+
+    max-width: 75%;
+
+    padding: 14px 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius:
+        15px
+        15px
+        15px
+        4px;
+
+    color: #202124;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.user-message {
+    width: fit-content;
+
+    max-width: 75%;
+
+    align-self: flex-end;
+
+    padding: 14px 17px;
+
+    background: #ff5722;
+
+    border-radius:
+        15px
+        15px
+        4px
+        15px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   INPUT DO TUTOR
+========================================================= */
+
+.chat-input {
+    padding: 13px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.chat-form {
+    display: flex;
+
+    gap: 10px;
+}
+
+.chat-form input {
+    flex: 1;
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d9dde3;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+.chat-form input:focus {
+    border-color: #ff5722;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.chat-form button {
+    height: 48px;
+
+    padding: 0 21px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #ff5722;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.chat-form button:hover {
+    background: #f4511e;
+}
+
+
+/* =========================================================
+   EDITOR
+========================================================= */
+
+.editor {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.editor textarea {
+    width: 100%;
+
+    min-height: 350px;
+
+    padding: 20px;
+
+    resize: vertical;
+
+    background: #151719;
+
+    color: #f5f5f5;
+
+    border: none;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.editor iframe {
+    width: 100%;
+
+    min-height: 350px;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
+
+.settings-card {
+    width: 100%;
+
+    max-width: 700px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 16px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eceef1;
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+}
+
+.settings-row strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #111827;
+}
+
+.settings-row span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.danger-button {
+    padding: 10px 15px;
+
+    border: 1px solid #f0a3a5;
+
+    border-radius: 9px;
+
+    background: #fff5f5;
+
+    color: #c62828;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.danger-button:hover {
+    background: #ffe8e8;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.stats-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.stat-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e4e8;
+
+    border-radius: 15px;
+}
+
+.stat-card span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.stat-card strong {
+    color: #111827;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.empty-state {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+.empty-state i {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #ff5722;
+
+    font-size: 40px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 205px;
+    }
+
+    .main {
+        width: calc(100% - 205px);
+
+        margin-left: 205px;
+
+        padding: 30px;
+    }
+
+    .learning-grid,
+    .courses-grid,
+    .course-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 75px;
+
+        padding: 20px 10px;
+    }
+
+    .sidebar .logo {
+        padding: 0 0 25px;
+
+        text-align: center;
+
+        font-size: 16px;
+    }
+
+    .menu-item {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .menu-item span {
+        display: none;
+    }
+
+    .sidebar-user {
+        justify-content: center;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .main {
+        width: calc(100% - 75px);
+
+        margin-left: 75px;
+
+        padding: 25px 20px;
+    }
+
+    .learning-grid,
+    .courses-grid,
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .greeting h1 {
+        font-size: 25px;
+    }
+
+    .exercise-options {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-chat {
+        height: calc(100vh - 90px);
+
+        min-height: 450px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .sidebar {
+        width: 64px;
+    }
+
+    .main {
+        width: calc(100% - 64px);
+
+        margin-left: 64px;
+
+        padding: 20px 14px;
+    }
+
+    .sidebar .logo {
+        font-size: 13px;
+    }
+
+    .greeting h1 {
+        font-size: 22px;
+    }
+
+    .greeting p {
+        font-size: 13px;
+    }
+
+    .xp {
+        padding: 8px 10px;
+    }
+
+    .lesson-header h1 {
+        font-size: 25px;
+    }
+
+    .lesson-header-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .lesson-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .lesson-actions button {
+        width: 100%;
+    }
+
+    .ai-message,
+    .user-message {
+        max-width: 90%;
+    }
+
+    .chat-form button {
+        padding: 0 14px;
+    }
+}
