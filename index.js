@@ -1201,8 +1201,7 @@ function abrirCurso(id) {
                                 <div class="lesson-info">
 
                                     <strong>
-                                        Aula ${index + 1} —
-                                        ${aula.titulo}
+                                        Aula ${index + 1} —${aula.titulo}
                                     </strong>
 
                                     <span>
@@ -1817,7 +1816,7 @@ function telaIA() {
                         required
                     >
 
-                    <button type="submit">
+                    <button type="submit" id="sendBtn">
                         <i class="fa-solid fa-paper-plane"></i>
                         Enviar
                     </button>
@@ -1841,146 +1840,96 @@ function telaIA() {
 
 
 /* =========================================================
-   CONECTAR COM BACKEND
+   CONECTAR COM BACKEND (FASTAPI)
 ========================================================= */
 
 async function enviarPerguntaIA(event) {
 
-    event.preventDefault();
+    if (event) event.preventDefault();
 
-    const input =
-        document.getElementById(
-            "chatInput"
-        );
+    const input = document.getElementById("chatInput");
+    const messages = document.getElementById("chatMessages");
 
-    const messages =
-        document.getElementById(
-            "chatMessages"
-        );
+    if (!input || !messages) return;
 
-    const pergunta =
-        input.value.trim();
+    const pergunta = input.value.trim();
 
-    if (!pergunta) {
-        return;
-    }
+    if (!pergunta) return;
 
-
-    messages.innerHTML += `
-        <div class="user-message">
-            ${escaparHTML(pergunta)}
-        </div>
-    `;
+    // 1. Desenha a mensagem do usuário na tela
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-message";
+    userMsg.textContent = pergunta;
+    messages.appendChild(userMsg);
 
     input.value = "";
 
+    // 2. Cria balão temporário de "Carregando..."
+    const carregando = document.createElement("div");
+    carregando.className = "ai-message";
+    carregando.id = "mensagemCarregando";
+    carregando.textContent = "Pensando... 🤔";
+    messages.appendChild(carregando);
 
-    const carregando =
-        document.createElement("div");
-
-    carregando.className =
-        "ai-message";
-
-    carregando.id =
-        "mensagemCarregando";
-
-    carregando.textContent =
-        "Pensando... 🤔";
-
-    messages.appendChild(
-        carregando
-    );
-
-
-    messages.scrollTop =
-        messages.scrollHeight;
-
+    messages.scrollTop = messages.scrollHeight;
 
     try {
-
-        const resposta =
-            await fetch(
-                "http://127.0.0.1:8000/api/v1/chat",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body: JSON.stringify({
-                        message: pergunta
-                    })
-                }
-            );
-
+        // Envia o payload. Para evitar o Erro 422 no FastAPI,
+        // enviamos tanto 'message' como 'content' para ser compatível
+        // com diferentes modelos Pydantic no backend.
+        const resposta = await fetch("http://127.0.0.1:8000/api/v1/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                conversation_id: 1,
+                message: pergunta,
+                content: pergunta
+            })
+        });
 
         if (!resposta.ok) {
-
-            throw new Error(
-                "Erro HTTP " +
-                resposta.status
-            );
-
+            throw new Error(`Erro no servidor HTTP ${resposta.status}`);
         }
 
-
-        const dados =
-            await resposta.json();
-
+        const dados = await resposta.json();
 
         carregando.remove();
 
-
+        // Procura pelo campo de resposta retornado pela API
         const texto =
+            dados.content ||
             dados.response ||
             dados.message ||
             dados.answer ||
             dados.reply ||
-            "O backend respondeu, mas não encontrei o campo da resposta.";
+            "Resposta recebida, mas campo de texto não identificado.";
 
-
-        messages.innerHTML += `
-            <div class="ai-message">
-                ${escaparHTML(String(texto))}
-            </div>
-        `;
-
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "ai-message";
+        aiMsg.textContent = String(texto);
+        messages.appendChild(aiMsg);
 
     } catch (erro) {
 
         carregando.remove();
 
-        messages.innerHTML += `
-            <div class="ai-message">
-
-                ❌ Não consegui conectar ao backend.
-
-                <br><br>
-
-                Verifique se seu amigo
-                está executando o servidor em:
-
-                <br><br>
-
-                <strong>
-                    http://127.0.0.1:8000
-                </strong>
-
-                <br><br>
-
-                Erro:
-                ${escaparHTML(erro.message)}
-
-            </div>
+        const errorMsg = document.createElement("div");
+        errorMsg.className = "ai-message";
+        errorMsg.innerHTML = `
+            ❌ Não foi possível conectar ao backend.
+            <br><br>
+            Verifique se o seu servidor Uvicorn está a rodar em:
+            <br>
+            <strong>http://127.0.0.1:8000</strong>
+            <br><br>
+            <em>Detalhes do erro: ${escaparHTML(erro.message)}</em>
         `;
-
+        messages.appendChild(errorMsg);
     }
 
-
-    messages.scrollTop =
-        messages.scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
 }
 
 
@@ -2528,7 +2477,7 @@ function configurarMenu() {
 
 
 /* =========================================================
-   CURSOS - EVENTOS
+   CURSOS - EVENTOS GLOBIAIS
 ========================================================= */
 
 document.addEventListener(
@@ -2553,20 +2502,14 @@ document.addEventListener(
 
 
 /* =========================================================
-   INICIALIZAÇÃO
+   INICIALIZAÇÃO ÚNICA DO SISTEMA
 ========================================================= */
 
 function iniciarDevStart() {
-
     configurarLogin();
-
     configurarMenu();
-
     atualizarUsuario();
-
     telaInicio();
-
 }
-
 
 iniciarDevStart();
