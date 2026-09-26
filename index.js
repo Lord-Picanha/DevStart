@@ -1877,7 +1877,7 @@ async function enviarPerguntaIA(event) {
         // Envia o payload. Para evitar o Erro 422 no FastAPI,
         // enviamos tanto 'message' como 'content' para ser compatível
         // com diferentes modelos Pydantic no backend.
-        const resposta = await fetch("http://127.0.0.1:8000/api/v1/chat", {
+        const resposta = await fetch("https://devstartbeckend.onrender.com/api/v1/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
